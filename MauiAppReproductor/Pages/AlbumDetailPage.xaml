@@ -1,0 +1,67 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppReproductor.Pages.AlbumDetailPage"
+             Title="{Binding AlbumSelected.Title}">
+
+    <VerticalStackLayout>
+        <Image Source="{Binding AlbumSelected.Picture}" 
+               HeightRequest="100"
+               Aspect="AspectFit"
+               HorizontalOptions="Center"/>
+
+        <Label Text="{Binding AlbumSelected.Title}" 
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center"/>
+
+        <Label Text="{Binding AlbumSelected.Year}" 
+               FontSize="18"
+               TextColor="Gray"
+               HorizontalOptions="Center"/>
+
+        <CollectionView ItemsSource="{Binding Songs}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeShape="RoundRectangle 10"
+                            BackgroundColor="#1C1C1E"
+                            Padding="10"
+                            StrokeThickness="1"
+                            Stroke="Gray">
+                        <Grid ColumnDefinitions="Auto, *"
+                              Padding="10"
+                              VerticalOptions="Center">
+                            <VerticalStackLayout>
+                                <Label Text="Track"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                                <Label Text="{Binding TrackNum}" 
+                                   FontSize="36"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="1" Padding="10">
+                                <Label Text="{Binding Title}" 
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="White"/>
+                                <Label Text="{Binding Publisher}" 
+                                       FontSize="14"
+                                       TextColor="Gray"/>
+                            </VerticalStackLayout>
+                            
+                            <ImageButton Grid.Column="2"
+                                         Source="play_icon.png" 
+                                         HeightRequest="24"
+                                         WidthRequest="24"
+                                         BackgroundColor="Transparent"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

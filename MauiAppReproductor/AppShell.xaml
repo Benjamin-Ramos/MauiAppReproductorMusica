@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:MauiAppReproductor.Pages"
+       x:Class="MauiAppReproductor.AppShell"
+       Title="Sonora">
+    <FlyoutItem Title="Inicio">
+        <ShellContent ContentTemplate="{DataTemplate views:HomePage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Albums">
+        <ShellContent ContentTemplate="{DataTemplate views:AlbumsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Acerca de">
+        <ShellContent ContentTemplate="{DataTemplate views:InfoPage}"/>
+    </FlyoutItem>
+</Shell>
